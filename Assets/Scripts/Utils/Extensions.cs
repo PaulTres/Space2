@@ -1,0 +1,289 @@
+using AudioSystem;
+using Effects;
+using HP;
+using HybridBT2;
+using System.Collections.Generic;
+using UnityEngine;
+namespace Utilities
+{
+    public enum Directions
+    {
+        Up,
+        Down,
+        Left,
+        Right,
+        Forward,
+        Backward
+    }
+
+    public static class Extensions
+    {
+        public static string ConvertToDistance(this float distance)
+        {
+            distance *= 20;
+            if (distance < 1000)
+            {
+                return $"{distance:0} m";
+            }
+            else
+            {
+                return $"{distance / 1000:0.00} km";
+            }
+        }
+
+        public static void Play(this SoundData soundData, Vector3 position, bool createManager = true, bool requiresPlayer = true)
+        {
+            if (soundData == null) return;
+            var m = SoundManager.TryGetInstance(createManager);
+            if (m != null)
+            {
+                if (requiresPlayer)
+                {
+                    if (!GameManager.Player.Active()) return;
+                    var dist = Vector3.Distance(position, GameManager.Player.position);
+                    if (dist > soundData.maxDistance) return;
+                }
+                //Debug.Log("Playing " + soundData.clip.name);
+                m.Play(soundData, position);
+
+            }
+        }
+
+        public static void SpawnEffect(this PoolableEffect effect, Vector3 position, float scaleFactor)
+        {
+            SpawnEffect(effect, position, Quaternion.identity, scaleFactor);
+        }
+
+        public static void SpawnEffect(this PoolableEffect effect, Vector3 position, Quaternion rotation, float scaleFactor)
+        {
+            PoolableEffect.Spawn(effect, position, rotation, scaleFactor * Vector3.one);
+        }
+
+        #region ImprovedMonoBehaviour  
+        /// <summary>
+        /// Returns true if the ImprovedMonoBehaviour is not null, its GameObject 
+        /// is active, and if it is not dying (unless allowDying is true).
+        /// </summary>
+        /// <param name="object"></param>
+        /// <param name="allowDying"></param>
+        /// <returns></returns>
+        public static bool Active(this ImprovedMonoBehaviour @object, bool allowDying = false)
+        {
+            if (@object == null) return false;
+            if (@object is Unit unityObj) return unityObj != null &&
+                    @object.Transform.gameObject.activeSelf && (allowDying || !unityObj.IsDying);
+            return @object != null && @object.Transform.gameObject.activeSelf;
+        }
+
+        /// <summary>
+        /// Returns the instance ID of the ImprovedMonoBehaviour's Transform. This is used to uniquely identify the object in the scene.
+        /// </summary>
+        /// <param name="object"></param>
+        /// <returns></returns>
+        public static int GetTransformInstanceID(this ImprovedMonoBehaviour @object)
+        {
+            return @object.Transform.GetInstanceID();
+        }
+
+        public static bool IsEqual(this ImprovedMonoBehaviour @object, ImprovedMonoBehaviour other)
+        {
+            if (@object == null && other == null) return true;
+            if (@object == null || other == null) return false;
+            return @object.GetInstanceID() == other.GetInstanceID();
+        }
+        #endregion
+
+        #region Collections
+        public static string Output<T>(this ICollection<T> collection)
+        {
+            if (collection == null) return "null";
+            if (collection.Count == 0) return "empty";
+            var output = $"Count: {collection.Count}\n";
+            foreach (var item in collection)
+            {
+                output += $"{item}\n";
+            }
+            return output;
+        }
+
+        /// <summary>
+        /// Returns true if the collection is null or has no elements in it.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="collection"></param>
+        /// <returns></returns>
+        public static bool IsEmpty<T>(this ICollection<T> collection)
+        {
+            return collection == null || collection.Count == 0;
+        }
+
+        /// <summary>
+        /// Shuffles the element order of the specified list.
+        /// </summary>
+        public static void Shuffle<T>(this IList<T> ts)
+        {
+            var count = ts.Count;
+            var last = count - 1;
+            for (var i = 0; i < last; ++i)
+            {
+                var r = UnityEngine.Random.Range(i, count);
+                (ts[r], ts[i]) = (ts[i], ts[r]);
+            }
+        }
+        #endregion
+
+        /// <summary>
+        /// If an angle is > 180, will subtract 360. If it is < 180, will add 360.
+        /// </summary>
+        /// <param name="angle"></param>
+        /// <returns></returns>
+        public static float NormalizeAngle(float angle)
+        {
+            if (angle > 180f) angle -= 360f;
+            if (angle < -180) angle += 360f;
+            return angle;
+        }
+
+        /// <summary>
+        /// Returns a vector that is perpendicular to the input vector. If the input vector 
+        /// is zero, returns zero. If normalize is true, returns a normalized vector.
+        /// </summary>
+        /// <param name="inputVector">The input vector.</param>
+        /// <param name="normalize">Whether to normalize the resulting vector.</param>
+        /// <returns>A vector that is perpendicular to the input vector.</returns>
+        public static Vector3 Perpendicular(this Vector3 inputVector, bool normalize = true)
+        {
+            if (inputVector == Vector3.zero) return Vector3.zero;
+            Vector3 v;
+            if (inputVector.z != 0)
+            {
+                v = new Vector3(1, 1, -(inputVector.x + inputVector.y) / inputVector.z);
+            }
+            else if (inputVector.x != 0)
+            {
+                v = new Vector3(-(inputVector.y + inputVector.z) / inputVector.x, 1, 1);
+            }
+            else
+            {
+                v = new Vector3(1, -(inputVector.x + inputVector.z) / inputVector.y, 1);
+            }
+            return normalize ? v.normalized : v;
+        }
+
+        #region Transform
+        public static bool IsPlayer(this Transform transform)
+        {
+            if (transform == null) return false;
+            if (!GameManager.Player.Active()) return false;
+            return transform == GameManager.Player.transform.root;
+        }
+
+        /// <summary>
+        /// Get the direction from the transform to the target position in terms of the transform's local axes.
+        /// </summary>
+        /// <param name="transform"></param>
+        /// <param name="targetPosition"></param>
+        /// <returns></returns>
+        /// <exception cref="System.ArgumentNullException"></exception>
+        public static Directions GetDirection(this Transform transform, Vector3 targetPosition)
+        {
+            if (transform == null) throw new System.ArgumentNullException();
+            var direction = (targetPosition - transform.position).normalized;
+            var forward = transform.forward;
+            var right = transform.right;
+            var up = transform.up;
+            float forwardDot = Vector3.Dot(forward, direction);
+            float rightDot = Vector3.Dot(right, direction);
+            float upDot = Vector3.Dot(up, direction);
+            if (forwardDot > 0.707f) return Directions.Forward;
+            if (forwardDot < -0.707f) return Directions.Backward;
+            if (rightDot > 0.707f) return Directions.Right;
+            if (rightDot < -0.707f) return Directions.Left;
+            if (upDot > 0.707f) return Directions.Up;
+            if (upDot < -0.707f) return Directions.Down;
+            return Directions.Forward; // Default case
+        }
+
+        public static Blackboard GetBlackboard(this Transform transform)
+        {
+            if (transform == null) throw new System.ArgumentNullException();
+            var comp = ComponentRegister<BanditTree>.Get(transform);
+            if (comp != null)
+            {
+                return comp.Context;
+            }
+            return null;
+        }
+
+        public static float GetHP(this Transform transform, bool percentage = false)
+        {
+            if (transform == null) throw new System.ArgumentNullException();
+            var comp = ComponentRegister<Unit>.Get(transform);
+            if (comp == null) return 0;
+
+            return percentage ? comp.CurrentHPPercentage : comp.CurrentHP;
+        }
+
+        public static int GetTeam(this Transform transform, bool throwOnNullTransform = true, int defaultValue = -1)
+        {
+            if (transform == null)
+            {
+                if (!throwOnNullTransform) return defaultValue;
+                throw new System.ArgumentNullException();
+            }
+            var ship = ComponentRegister<Unit>.Get(transform);
+            return ship != null ? ship.Team : defaultValue;
+        }
+
+        public static T GetComponentViaRegister<T>(this Transform transform) where T : Component, IRegisterableComponent
+        {
+            if (transform == null) throw new System.ArgumentNullException();
+            return ComponentRegister<T>.Get(transform);
+        }
+
+        public static T GetOrAddRegisterableComponent<T>(this Transform transform) where T : Component, IRegisterableComponent
+        {
+            if (transform == null) throw new System.ArgumentNullException();
+            T component = ComponentRegister<T>.Get(transform);
+            if (component == null)
+            {
+                component = transform.GetComponent<T>();
+                if (component == null)
+                {
+                    component = transform.gameObject.AddComponent<T>();
+                }
+                ComponentRegister<T>.Register(transform, component);
+            }
+            return component;
+        }
+
+        public static T GetOrAddComponent<T>(this Transform transform) where T : Component
+        {
+            if (transform == null) throw new System.ArgumentNullException();
+            if (!transform.TryGetComponent<T>(out var component))
+            {
+                component = transform.gameObject.AddComponent<T>();
+            }
+            return component;
+        }
+
+        /// <summary>
+        /// Applies a DamageInfo to the HPComponent of the given Transform. Returns true if 
+        /// damage was applied, false otherwise.
+        /// </summary>
+        /// <param name="transform">The Transform to apply damage to.</param>
+        /// <param name="damageInfo">The DamageInfo to apply.</param>
+        /// <returns>True if damage was applied, false otherwise.</returns>
+        /// <exception cref="System.ArgumentNullException"></exception>
+        public static bool TakeDamage(this Transform transform, DamageInfo damageInfo)
+        {
+            if (transform == null) throw new System.ArgumentNullException();
+            //if (transform.parent != null)
+            //{
+            //    Debugging.LogWarning($"{transform} has parent!");
+            //}
+            return HPComponent.TakeDamage(transform, damageInfo);
+        }
+        #endregion
+    }
+}
