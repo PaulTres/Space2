@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 9671045f5353455eac01baffcdbcf475
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 408178
+  packageName: "Nav 3D Lite \u2014 3D Pathfinding & Flying AI Navigation"
+  packageVersion: 3.1.0
+  assetPath: Assets/Nav3D/SpaceProcessing/ObstacleProcessing/UtilityTypes/ShellGapZipper.cs
+  uploadId: 1031726

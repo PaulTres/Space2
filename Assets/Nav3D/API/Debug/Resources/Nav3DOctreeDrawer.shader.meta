@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: c149b8c9710974d2dabd5d20d2475c72
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 408178
+  packageName: "Nav 3D Lite \u2014 3D Pathfinding & Flying AI Navigation"
+  packageVersion: 3.1.0
+  assetPath: Assets/Nav3D/API/Debug/Resources/Nav3DOctreeDrawer.shader
+  uploadId: 1031726

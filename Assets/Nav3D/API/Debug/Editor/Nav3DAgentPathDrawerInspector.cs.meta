@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: a6c6eb9a6087349c8a94e205823d3e9c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 408178
+  packageName: "Nav 3D Lite \u2014 3D Pathfinding & Flying AI Navigation"
+  packageVersion: 3.1.0
+  assetPath: Assets/Nav3D/API/Debug/Editor/Nav3DAgentPathDrawerInspector.cs
+  uploadId: 1031726

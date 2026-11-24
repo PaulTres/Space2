@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 3801bdcc7fbe4332986dc3ad4f36a368
+timeCreated: 1757596832
+AssetOrigin:
+  serializedVersion: 1
+  productId: 408178
+  packageName: "Nav 3D Lite \u2014 3D Pathfinding & Flying AI Navigation"
+  packageVersion: 3.1.0
+  assetPath: Assets/Nav3D/API/Obstacles/Nav3DObstacleRuntime.cs
+  uploadId: 1031726

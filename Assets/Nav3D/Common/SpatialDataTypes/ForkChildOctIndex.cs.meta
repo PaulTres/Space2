@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 9815d6e9793147a79ae6f2845cbe524e
+timeCreated: 1770033412
+AssetOrigin:
+  serializedVersion: 1
+  productId: 408178
+  packageName: "Nav 3D Lite \u2014 3D Pathfinding & Flying AI Navigation"
+  packageVersion: 3.1.0
+  assetPath: Assets/Nav3D/Common/SpatialDataTypes/ForkChildOctIndex.cs
+  uploadId: 1031726

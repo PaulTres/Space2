@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 08e8392d59234eb88c3166f5fa1c4456
+MonoImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 408178
+  packageName: "Nav 3D Lite \u2014 3D Pathfinding & Flying AI Navigation"
+  packageVersion: 3.1.0
+  assetPath: Assets/Nav3D/SpaceProcessing/ObstacleProcessing/GlobalOctree/SpatialStorages/TriangleStorage.Morton.cs
+  uploadId: 1031726

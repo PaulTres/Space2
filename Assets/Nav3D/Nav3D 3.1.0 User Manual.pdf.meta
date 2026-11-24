@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e02159ce46f04cb398b3e7d65e6ab81d
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 408178
+  packageName: "Nav 3D Lite \u2014 3D Pathfinding & Flying AI Navigation"
+  packageVersion: 3.1.0
+  assetPath: Assets/Nav3D/Nav3D 3.1.0 User Manual.pdf
+  uploadId: 1031726

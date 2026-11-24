@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 8149d7bc8b4e646d7b1b9c4ff71a8745
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 408178
+  packageName: "Nav 3D Lite \u2014 3D Pathfinding & Flying AI Navigation"
+  packageVersion: 3.1.0
+  assetPath: Assets/Nav3D/Demo/Showcases/PathFollowing/PathFollowing.unity
+  uploadId: 1031726

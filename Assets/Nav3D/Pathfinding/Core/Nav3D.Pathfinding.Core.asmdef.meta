@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 507ad96325e641b7a8618b2ef3ae8c58
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 408178
+  packageName: "Nav 3D Lite \u2014 3D Pathfinding & Flying AI Navigation"
+  packageVersion: 3.1.0
+  assetPath: Assets/Nav3D/Pathfinding/Core/Nav3D.Pathfinding.Core.asmdef
+  uploadId: 1031726

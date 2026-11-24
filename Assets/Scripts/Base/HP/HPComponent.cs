@@ -105,7 +105,7 @@ namespace HP
         {
             if (minHPRegainCooldown >= 0)
             {
-                GlobalUpdater.TryGetInstance(true).RegisterUpdate(PerformRegeneration);
+                GlobalUpdater.RegisterUpdate(PerformRegeneration);
             }
             if (damageEffects.IsEmpty()) damageEffects = new(Transform.root.GetComponentsInChildren<DamageEffect>(true));
         }
@@ -131,8 +131,7 @@ namespace HP
 
         protected void OnDestroy()
         {
-            var u = GlobalUpdater.TryGetInstance();
-            if (u != null) u.UnregisterUpdate(PerformRegeneration);
+            GlobalUpdater.DeregisterUpdate(PerformRegeneration);
         }
         #endregion
 

@@ -75,9 +75,9 @@ namespace Player
             freeLook = false;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            GlobalUpdater.TryGetInstance(true).RegisterFixedUpdate(PerformFixedUpdate);
-            GlobalUpdater.TryGetInstance(true).RegisterUpdate(PerformUpdate);
-            GlobalUpdater.TryGetInstance(true).RegisterLateUpdate(PerformLateUpdate);
+            GlobalUpdater.RegisterFixedUpdate(PerformFixedUpdate);
+            GlobalUpdater.RegisterUpdate(PerformUpdate);
+            GlobalUpdater.RegisterLateUpdate(PerformLateUpdate);
             ResetCamera();
             EventBus<PauseScreen.PauseEvent>.AddActions(OnPauseEvent);
             base.OnEnable();
@@ -91,13 +91,9 @@ namespace Player
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             DisableCallbacks();
-            var i = GlobalUpdater.TryGetInstance();
-            if (i != null)
-            {
-                i.UnregisterFixedUpdate(PerformFixedUpdate);
-                i.UnregisterUpdate(PerformUpdate);
-                i.UnregisterLateUpdate(PerformLateUpdate);
-            }
+            GlobalUpdater.DeregisterFixedUpdate(PerformFixedUpdate);
+            GlobalUpdater.DeregisterUpdate(PerformUpdate);
+            GlobalUpdater.DeregisterLateUpdate(PerformLateUpdate);
             if (IsDying)
             {
                 //spawn mission failure screen

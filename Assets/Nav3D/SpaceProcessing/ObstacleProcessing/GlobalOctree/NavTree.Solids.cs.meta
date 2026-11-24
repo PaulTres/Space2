@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: ce0a12a1ca4146e9af5b9eeab022bfb7
+AssetOrigin:
+  serializedVersion: 1
+  productId: 408178
+  packageName: "Nav 3D Lite \u2014 3D Pathfinding & Flying AI Navigation"
+  packageVersion: 3.1.0
+  assetPath: Assets/Nav3D/SpaceProcessing/ObstacleProcessing/GlobalOctree/NavTree.Solids.cs
+  uploadId: 1031726

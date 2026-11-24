@@ -1,0 +1,36 @@
+{
+  "TITLE": "Path Following",
+  "CAPTION": "One courier, a broken curtain of columns, and the route it is handed",
+  "HINTS": [
+    {
+      "ID": "default",
+      "PARTS": [
+        "LMB: send the courier there",
+        "Shift+LMB: add a waypoint (on waypoint 1: close the loop)",
+        "Tab: Smooth Path ON/OFF",
+        "R: reset",
+        "Space: pause",
+        "RMB+WASD/QE: fly camera",
+        "Esc: demos"
+      ]
+    }
+  ],
+  "HELP": [
+    {
+      "HEADER": "What this scene shows",
+      "BODY": "An order given to a Nav3DAgent and the route that answers it. The world is scene-authored geometry carrying one obstacle component, read into the navigation space once at start-up."
+    },
+    {
+      "HEADER": "Who is who",
+      "BODY": "The cone is the courier; the line is the route it was given, drawn end to end. The green and orange rings are the two ends of its own shuttle run, and the curtain of columns across the corridor has two of them broken down to stumps."
+    },
+    {
+      "HEADER": "What you can do",
+      "BODY": "Click anywhere on the stage — the floor, a column, the top of a stump — and the courier flies there. Shift + click adds numbered waypoints (MoveToPoints), and Shift + click on waypoint 1 closes them into a loop it flies round and round. Tab switches Smooth Path and asks for the same route again."
+    },
+    {
+      "HEADER": "What to look for",
+      "BODY": "The straight line is blocked, so the route climbs over the low columns instead of rounding the whole curtain. With smoothing off it turns at every octree cell it crosses; with smoothing on it is the line the courier actually flies."
+    }
+  ]
+}

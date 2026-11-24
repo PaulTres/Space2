@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 95dce1053918410c91098b6ea32e0ccc
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 408178
+  packageName: "Nav 3D Lite \u2014 3D Pathfinding & Flying AI Navigation"
+  packageVersion: 3.1.0
+  assetPath: Assets/Nav3D/Demo/Common/Spline3D/Spline3DMover.cs
+  uploadId: 1031726

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 6a2b9b607e1ab43b285618c6db7ac66c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 408178
+  packageName: "Nav 3D Lite \u2014 3D Pathfinding & Flying AI Navigation"
+  packageVersion: 3.1.0
+  assetPath: Assets/Nav3D/Common/AgentCore/AgentMotionPipeline.Editor.cs
+  uploadId: 1031726

@@ -1,0 +1,19 @@
+{
+    "name": "Nav3D.API",
+    "rootNamespace": "",
+    "references": [
+        "GUID:651a6173657748e3889cc4a762d9510e",
+        "GUID:844ab9e625174e27a1a28a400386720c",
+        "GUID:04b88778c7ac415ea14cce8275c3193e",
+        "GUID:bfaf89fd5622496e9e926df6f1d86627"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ef61efb2f9850429ba6e1264f603481f
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 408178
+  packageName: "Nav 3D Lite \u2014 3D Pathfinding & Flying AI Navigation"
+  packageVersion: 3.1.0
+  assetPath: Assets/Nav3D/Demo/Playable/Skyline/Materials/SkylineBuildingStone.mat
+  uploadId: 1031726

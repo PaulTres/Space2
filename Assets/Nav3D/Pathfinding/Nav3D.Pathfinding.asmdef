@@ -1,0 +1,18 @@
+{
+    "name": "Nav3D.Pathfinding",
+    "rootNamespace": "",
+    "references": [
+        "GUID:651a6173657748e3889cc4a762d9510e",
+        "GUID:507ad96325e641b7a8618b2ef3ae8c58",
+        "GUID:844ab9e625174e27a1a28a400386720c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

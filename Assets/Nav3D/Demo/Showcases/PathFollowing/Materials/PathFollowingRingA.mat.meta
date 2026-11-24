@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1dc8f623f430548d7b05650fce21536c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 408178
+  packageName: "Nav 3D Lite \u2014 3D Pathfinding & Flying AI Navigation"
+  packageVersion: 3.1.0
+  assetPath: Assets/Nav3D/Demo/Showcases/PathFollowing/Materials/PathFollowingRingA.mat
+  uploadId: 1031726

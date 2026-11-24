@@ -1,0 +1,19 @@
+{
+    "name": "Nav3D.API.Debug.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:af4e9dacf52344f8b2b743ecce7433ad",
+        "GUID:fff6cc2d21724de285d7166cb783481d"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

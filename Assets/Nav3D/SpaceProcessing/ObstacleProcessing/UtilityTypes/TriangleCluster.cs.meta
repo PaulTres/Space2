@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 81ac111e910f40ae85d8b5821df4739f
+timeCreated: 1760196050
+AssetOrigin:
+  serializedVersion: 1
+  productId: 408178
+  packageName: "Nav 3D Lite \u2014 3D Pathfinding & Flying AI Navigation"
+  packageVersion: 3.1.0
+  assetPath: Assets/Nav3D/SpaceProcessing/ObstacleProcessing/UtilityTypes/TriangleCluster.cs
+  uploadId: 1031726

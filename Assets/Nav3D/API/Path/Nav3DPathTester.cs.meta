@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 33355fc922194acbb61ffff825e4c29b
+timeCreated: 1742750972
+AssetOrigin:
+  serializedVersion: 1
+  productId: 408178
+  packageName: "Nav 3D Lite \u2014 3D Pathfinding & Flying AI Navigation"
+  packageVersion: 3.1.0
+  assetPath: Assets/Nav3D/API/Path/Nav3DPathTester.cs
+  uploadId: 1031726

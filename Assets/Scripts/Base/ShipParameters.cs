@@ -19,7 +19,7 @@ public class ShipParameters : MonoBehaviour
     public float ForwardThrust = 15;
     public float StrafeThrust = 15;
     public float RotationSpeed = 50;
-    [Tooltip("Turrets will engage enemy missiles within this distance of the ship.")]
+    [Tooltip("Turrets will engage enemy missiles within this boxPadding of the ship.")]
     public float MissileTargetingRange = 50;
     [SerializeField] protected bool validateData = true;
 

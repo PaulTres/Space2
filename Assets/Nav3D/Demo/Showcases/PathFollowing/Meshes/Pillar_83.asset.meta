@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2d4c5fe16afb74de1b6b27ecf9d09fa6
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 4300000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 408178
+  packageName: "Nav 3D Lite \u2014 3D Pathfinding & Flying AI Navigation"
+  packageVersion: 3.1.0
+  assetPath: Assets/Nav3D/Demo/Showcases/PathFollowing/Meshes/Pillar_83.asset
+  uploadId: 1031726

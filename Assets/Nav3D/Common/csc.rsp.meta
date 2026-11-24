@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 34d08afab68c2e8602d881b33d9cfb4d
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 408178
+  packageName: "Nav 3D Lite \u2014 3D Pathfinding & Flying AI Navigation"
+  packageVersion: 3.1.0
+  assetPath: Assets/Nav3D/Common/csc.rsp
+  uploadId: 1031726

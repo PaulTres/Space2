@@ -13,7 +13,7 @@ namespace HybridBT2
         {
             var t = context.GetData<ImprovedMonoBehaviour>(objectKey);
             if (!t.Active()) return 0;
-            return Mathf.Clamp01((maxRange - Vector3.Distance(context.Navigation.position, t.position)) / maxRange);
+            return Mathf.Clamp01((maxRange - Vector3.Distance(context.position, t.position)) / maxRange);
         }
     }
 }

@@ -24,13 +24,12 @@ namespace Weapons
         protected void OnEnable()
         {
             PerformReset();
-            GlobalUpdater.TryGetInstance(true).RegisterFixedUpdate(PerformFixedUpdate);
+            GlobalUpdater.RegisterFixedUpdate(PerformFixedUpdate);
         }
 
         protected void OnDisable()
         {
-            var u = GlobalUpdater.TryGetInstance();
-            if (u != null) u.UnregisterFixedUpdate(PerformFixedUpdate);
+            GlobalUpdater.DeregisterFixedUpdate(PerformFixedUpdate);
         }
 
         public void PerformReset()

@@ -80,7 +80,7 @@ namespace Weapons
         protected virtual void OnEnable()
         {
             onSpawnEffect.SpawnEffect(Transform.position, effectScaleFactor);
-            GlobalUpdater.TryGetInstance(true).RegisterFixedUpdate(PerformFixedUpdate);
+            GlobalUpdater.RegisterFixedUpdate(PerformFixedUpdate);
         }
 
         public virtual void Initialize(BulletData poolableData)
@@ -97,8 +97,7 @@ namespace Weapons
 
         protected virtual void OnDisable()
         {
-            var u = GlobalUpdater.TryGetInstance();
-            if (u != null) u.UnregisterFixedUpdate(PerformFixedUpdate);
+            GlobalUpdater.DeregisterFixedUpdate(PerformFixedUpdate);
             Release(this);
         }
         #endregion

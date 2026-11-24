@@ -46,7 +46,7 @@ public class Navigation : Ship
     protected override void OnEnable()
     {
         base.OnEnable();
-        GlobalUpdater.TryGetInstance(true).RegisterUpdate(PerformUpdate);
+        GlobalUpdater.RegisterUpdate(PerformUpdate);
         //Destination = Vector3.zero;
     }
 
@@ -55,7 +55,7 @@ public class Navigation : Ship
         base.OnDisable();
         buffer = null;
         RotationTarget = null;
-        if (GlobalUpdater.TryGetInstance() != null) GlobalUpdater.TryGetInstance().UnregisterUpdate(PerformUpdate);
+        GlobalUpdater.DeregisterUpdate(PerformUpdate);
     }
     #endregion
 

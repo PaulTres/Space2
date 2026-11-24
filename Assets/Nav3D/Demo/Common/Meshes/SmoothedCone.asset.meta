@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c0e092582b61040ff99a68fb7d8b6d4c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 4300000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 408178
+  packageName: "Nav 3D Lite \u2014 3D Pathfinding & Flying AI Navigation"
+  packageVersion: 3.1.0
+  assetPath: Assets/Nav3D/Demo/Common/Meshes/SmoothedCone.asset
+  uploadId: 1031726

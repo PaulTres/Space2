@@ -10,12 +10,13 @@ public class MoveToPointNode : LeafNodeData
     protected override Action<Node, Blackboard> onEnter => (n, ctx) =>
     {
         var targetPos = ctx.GetData<Vector3>(TargetPositionKey);
-        ctx.Navigation.SetDestination(targetPos);
+        //ctx.Navigation.SetDestination(targetPos);
     };
 
     protected override Func<LeafNode, Blackboard, NodeState> onEvaluate => (n, ctx) =>
     {
-        if (ctx.Navigation.Destination == null) return NodeState.SUCCESS;
-        return NodeState.RUNNING;
+        //if (ctx.Navigation.Destination == null) return NodeState.SUCCESS;
+        //return NodeState.RUNNING;
+        throw new NotImplementedException("MoveToPointNode is not implemented yet.");
     };
 }

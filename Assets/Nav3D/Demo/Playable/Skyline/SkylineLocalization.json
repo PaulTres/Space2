@@ -1,0 +1,57 @@
+{
+  "TITLE": "Skyline",
+  "CAPTION": "A city read into the navigation space once — then fly wherever you point",
+  "HINTS": [
+    {
+      "ID": "loading",
+      "PARTS": [
+        "Building the navigation space…"
+      ]
+    },
+    {
+      "ID": "takeoff",
+      "PARTS": [
+        "Lifting off…  (your order runs once airborne)"
+      ]
+    },
+    {
+      "ID": "flying",
+      "PARTS": [
+        "Mouse: aim — the ring and the marker come up on what you would fly to",
+        "LMB: fly there (a pad: land)",
+        "W/S/A/D: fly the camera free",
+        "C: camera back behind",
+        "Alt (hold): free the cursor",
+        "wheel: zoom",
+        "Space: pause",
+        "F2/F3: paths / cells",
+        "R: reset",
+        "Esc: demos"
+      ]
+    },
+    {
+      "ID": "landing",
+      "PARTS": [
+        "Landing…  (orders resume on the deck)"
+      ]
+    }
+  ],
+  "HELP": [
+    {
+      "HEADER": "What this scene shows",
+      "BODY": "A terraced city — towers, arched bridges, hangar houses with open bays, moored airships — is read into the navigation space once at startup (that was the card you waited through), and is fixed from then on. Everything after is the order surface over a static world: point, fly, land."
+    },
+    {
+      "HEADER": "Who is who",
+      "BODY": "Your helicopter starts on the plaza heliport. The two couriers are agents flying their own errands between the rooftop pads, landing and lifting off exactly as you do. Lit decks are landing pads; an amber deck is claimed. The amber line is your route; F2 draws every agent's."
+    },
+    {
+      "HEADER": "What you can do",
+      "BODY": "Move the mouse and the ring — your pointer — comes up with the translucent marker on what it would send you to; push the ring to the screen's edge to look around. LMB flies there, LMB a pad to land on it, and pointing into a hangar's open bay routes you inside. Let the mouse rest and the camera settles back behind the helicopter, the ring and the marker go with it, and you are just flying. W/S/A/D fly the camera away, C brings it back at once. Hold Alt to free the cursor for the panel. The Speed slider is the agent config's own Speed."
+    },
+    {
+      "HEADER": "The goal",
+      "BODY": "Reach any point you can see — the far side of a tower, under an airship's belly, through the arch of a bridge, into a bay — and watch the route bend in all three dimensions around what stands in the way. Take the pad a courier is heading for and watch it choose another."
+    }
+  ]
+}

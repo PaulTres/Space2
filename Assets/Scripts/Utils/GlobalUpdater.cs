@@ -12,17 +12,35 @@ namespace Utilities
             update = fixedUpdate = lateUpdate = null;
         }
 
-        public void RegisterUpdate(Action<float> action) => update += action;
+        public static void RegisterUpdate(Action<float> action)
+        {
+            TryGetInstance(true).update += action;
+        }
 
-        public void UnregisterUpdate(Action<float> action) => update -= action;
+        public static void DeregisterUpdate(Action<float> action)
+        {
+            if (HasInstance) instance.update -= action;
+        }
 
-        public void RegisterLateUpdate(Action<float> action) => lateUpdate += action;
+        public static void RegisterLateUpdate(Action<float> action)
+        {
+            TryGetInstance(true).lateUpdate += action;
+        }
 
-        public void UnregisterLateUpdate(Action<float> action) => lateUpdate -= action;
+        public static void DeregisterLateUpdate(Action<float> action)
+        {
+            if (HasInstance) instance.lateUpdate -= action;
+        }
 
-        public void RegisterFixedUpdate(Action<float> action) => fixedUpdate += action;
+        public static void RegisterFixedUpdate(Action<float> action)
+        {
+            TryGetInstance(true).fixedUpdate += action;
+        }
 
-        public void UnregisterFixedUpdate(Action<float> action) => fixedUpdate -= action;
+        public static void DeregisterFixedUpdate(Action<float> action)
+        {
+            if (HasInstance) instance.fixedUpdate -= action;
+        }
 
         private void Update()
         {

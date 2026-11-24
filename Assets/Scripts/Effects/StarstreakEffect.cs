@@ -19,7 +19,7 @@ namespace Effects
             EventBus<ObjectDestroyed>.AddActions(transform.root.GetInstanceID(), null, Stop);
             particles = GetComponent<ParticleSystem>();
             main = particles.main;
-            GlobalUpdater.TryGetInstance(true).RegisterUpdate(PerformUpdate);
+            GlobalUpdater.RegisterUpdate(PerformUpdate);
             transform.localScale = Vector3.one * player.EffectScaleFactor;
         }
 
@@ -37,8 +37,7 @@ namespace Effects
         {
             particles.Stop();
             EventBus<ObjectDestroyed>.RemoveActions(transform.root.GetInstanceID(), null, Stop);
-            var u = GlobalUpdater.TryGetInstance();
-            if (u != null) u.UnregisterUpdate(PerformUpdate);
+            GlobalUpdater.DeregisterUpdate(PerformUpdate);
         }
     }
 }

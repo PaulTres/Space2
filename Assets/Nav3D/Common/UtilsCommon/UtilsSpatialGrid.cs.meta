@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 60e887c88d5c43529f1ae0261d7bd03f
+timeCreated: 1736337369
+AssetOrigin:
+  serializedVersion: 1
+  productId: 408178
+  packageName: "Nav 3D Lite \u2014 3D Pathfinding & Flying AI Navigation"
+  packageVersion: 3.1.0
+  assetPath: Assets/Nav3D/Common/UtilsCommon/UtilsSpatialGrid.cs
+  uploadId: 1031726

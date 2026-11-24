@@ -12,7 +12,7 @@ public class MoveToTargetNode : LeafNodeData
     {
         if (StopDistance < TargetErrorThreshold)
         {
-            Debug.LogWarning($"Stop distance is greater than target error threshold on {Name}.");
+            Debug.LogWarning($"Stop boxPadding is greater than target error threshold on {Name}.");
         }
     }
     protected enum Keys
@@ -28,11 +28,12 @@ public class MoveToTargetNode : LeafNodeData
             Debug.LogError("Cannot pathfind to null target!");
             return;
         }
-        ctx.Navigation.RotationTarget = null;
-        ((LeafNode)n).SetData((int)Keys.OldStopDistance, ctx.Navigation.StopDistance);
-        ((LeafNode)n).SetData((int)Keys.PrevTargetPos, tr.position);
-        ctx.Navigation.StopDistance = StopDistance;
-        ctx.Navigation.SetDestination(tr.position);
+        throw new NotImplementedException("MoveToTargetNode is not implemented yet.");
+        //ctx.Navigation.RotationTarget = null;
+        //((LeafNode)n).SetData((int)Keys.OldStopDistance, ctx.Navigation.StopDistance);
+        //((LeafNode)n).SetData((int)Keys.PrevTargetPos, tr.position);
+        //ctx.Navigation.StopDistance = StopDistance;
+        //ctx.Navigation.SetDestination(tr.position);
     };
     protected override Func<LeafNode, Blackboard, NodeState> onEvaluate => (n, ctx) =>
     {
@@ -44,25 +45,25 @@ public class MoveToTargetNode : LeafNodeData
         }
 
         var prevPos = n.GetData<Vector3>((int)Keys.PrevTargetPos);
+        throw new NotImplementedException("MoveToTargetNode is not implemented yet.");
+        //if (Vector3.Distance(prevPos, tr.position) > TargetErrorThreshold)
+        //{
+        //    n.SetData((int)Keys.PrevTargetPos, tr.position);
+        //    ctx.Navigation.SetDestination(tr.position);
+        //    return NodeState.RUNNING;
+        //}
 
-        if (Vector3.Distance(prevPos, tr.position) > TargetErrorThreshold)
-        {
-            n.SetData((int)Keys.PrevTargetPos, tr.position);
-            ctx.Navigation.SetDestination(tr.position);
-            return NodeState.RUNNING;
-        }
+        //if (ReturnSuccessOnReach && Vector3.Distance(ctx.position, tr.position) <
+        //    ctx.Navigation.StopDistance)
+        //{
+        //    return NodeState.SUCCESS;
+        //}
 
-        if (ReturnSuccessOnReach && Vector3.Distance(ctx.position, tr.position) <
-            ctx.Navigation.StopDistance)
-        {
-            return NodeState.SUCCESS;
-        }
-
-        return NodeState.RUNNING;
+        // return NodeState.RUNNING;
     };
     protected override Action<Node, Blackboard> onExit => (n, ctx) =>
     {
-        ctx.Navigation.SetDestination(null);
-        ctx.Navigation.StopDistance = ((LeafNode)n).GetData<float>((int)Keys.OldStopDistance);
+        // ctx.Navigation.SetDestination(null);
+        //      ctx.Navigation.StopDistance = ((LeafNode)n).GetData<float>((int)Keys.OldStopDistance);
     };
 }

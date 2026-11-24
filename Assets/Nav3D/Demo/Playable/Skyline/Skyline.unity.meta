@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: cfa4f2ed04b074206927fbc1705c4abe
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 408178
+  packageName: "Nav 3D Lite \u2014 3D Pathfinding & Flying AI Navigation"
+  packageVersion: 3.1.0
+  assetPath: Assets/Nav3D/Demo/Playable/Skyline/Skyline.unity
+  uploadId: 1031726

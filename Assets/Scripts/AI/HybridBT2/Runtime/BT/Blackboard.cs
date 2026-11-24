@@ -1,3 +1,4 @@
+using Nav3D.API;
 using System.Collections.Generic;
 using UnityEngine;
 namespace HybridBT2
@@ -10,9 +11,9 @@ namespace HybridBT2
             TargetPosition
         }
 
-        public Vector3 position => Navigation.position;
+        public Vector3 position => Unit.position;
+        public readonly Nav3DAgent Navigation;
         public readonly Unit Unit;
-        public readonly Navigation Navigation;
         /// <summary>
         /// Time since last tree tick.
         /// </summary>
@@ -29,8 +30,8 @@ namespace HybridBT2
         {
             if (transform != null)
             {
-                Navigation = transform.GetComponent<Navigation>();
                 Unit = transform.GetComponent<Unit>();
+                Navigation = transform.GetComponent<Nav3DAgent>();
             }
             DeltaTime = 0;
             lastTime = Time.time;

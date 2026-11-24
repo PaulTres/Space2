@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 2c6d9967d05249e2884c4e2073c169e4
+timeCreated: 1770197031
+AssetOrigin:
+  serializedVersion: 1
+  productId: 408178
+  packageName: "Nav 3D Lite \u2014 3D Pathfinding & Flying AI Navigation"
+  packageVersion: 3.1.0
+  assetPath: Assets/Nav3D/SpaceProcessing/ObstacleProcessing/GlobalOctree/Elements/Fork.Editor.cs
+  uploadId: 1031726

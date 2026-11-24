@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: f3f12c3f5b48e4ea0948ec1782efd110
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 408178
+  packageName: "Nav 3D Lite \u2014 3D Pathfinding & Flying AI Navigation"
+  packageVersion: 3.1.0
+  assetPath: Assets/Nav3D/API/Debug/Resources/Nav3DAgentPathBody.shader
+  uploadId: 1031726

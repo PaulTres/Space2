@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 910e089f6621419fb66d3af78459270e
+timeCreated: 1762257487
+AssetOrigin:
+  serializedVersion: 1
+  productId: 408178
+  packageName: "Nav 3D Lite \u2014 3D Pathfinding & Flying AI Navigation"
+  packageVersion: 3.1.0
+  assetPath: Assets/Nav3D/SpaceProcessing/ObstacleProcessing/ObstacleStorage/ObstacleStorage.cs
+  uploadId: 1031726

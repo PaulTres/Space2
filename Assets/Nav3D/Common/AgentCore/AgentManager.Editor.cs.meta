@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: ca579aea9b3a4ea992faffdb4c88ad36
+timeCreated: 1745677253
+AssetOrigin:
+  serializedVersion: 1
+  productId: 408178
+  packageName: "Nav 3D Lite \u2014 3D Pathfinding & Flying AI Navigation"
+  packageVersion: 3.1.0
+  assetPath: Assets/Nav3D/Common/AgentCore/AgentManager.Editor.cs
+  uploadId: 1031726
