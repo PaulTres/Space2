@@ -7,7 +7,7 @@ namespace Weapons
         [SerializeField] protected Magazine magazine;
         public Magazine Magazine => magazine;
 
-        protected override void PerformBulletInitialization(Bullet bullet, ImprovedMonoBehaviour target)
+        protected override void PerformBulletInitialization(Bullet bullet, EntityBase target)
         {
             if (magazine != null)
             {

@@ -12,6 +12,7 @@ public abstract class EntityBase : ImprovedMonoBehaviour, IRegisterableComponent
     [field: SerializeField] public float MaxVelocityMagnitude { get; protected set; } = 20f;
     public abstract float EffectScaleFactor { get; }
     public virtual bool IsDying => false;
+    [field: SerializeField] public bool Untargetable { get; protected set; }
 
     public abstract void SetObjectLayer();
 }

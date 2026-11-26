@@ -10,7 +10,6 @@ public class TargetAcquisitionService : ServiceData
     [Tooltip("The minimum difference in utility score between the best target and the next " +
         "best target for the best target to be selected.")]
     public float MinUtilityDelta = 0;
-    public float MaxRange = 1000;
     public TargetEvaluation TargetEvaluation;
     [Tooltip("The score of the target of the escort candidate will be multiplied by this amount.")]
     //[SerializeField] protected float escortCandidateTargetMultiplier = 2;
@@ -31,11 +30,11 @@ public class TargetAcquisitionService : ServiceData
             if (!bestTarget.Active())
             {
                 bestTarget = target;
-                bestTargetScore = TargetEvaluation.Evaluate(ctx.Unit, target, MaxRange);
+                bestTargetScore = TargetEvaluation.Evaluate(ctx.Unit, target);
             }
             else
             {
-                var score = TargetEvaluation.Evaluate(ctx.Unit, target, MaxRange);
+                var score = TargetEvaluation.Evaluate(ctx.Unit, target);
                 if (score > bestTargetScore + MinUtilityDelta)
                 {
                     bestTarget = target;

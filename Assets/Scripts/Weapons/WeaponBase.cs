@@ -8,7 +8,7 @@ namespace Weapons
         #region Helpers
         Unit unit;
         /// <summary>
-        /// The unit that owns this Weapons. Lazily initialized by searching for a Navigation 
+        /// The unit that owns this Weapons. Lazily initialized by searching for a Unit
         /// component in the root of the transform hierarchy.
         /// </summary>
         public Unit UnitProperty
@@ -39,9 +39,12 @@ namespace Weapons
             }
         }
 
-        public BulletData BulletData => @params != null ? @params.BulletData : null;/// <summary>
-                                                                                    /// 0 means the weapon is fully reloaded, 1 means the weapon just fired and has started reloading.
-                                                                                    /// </summary>
+        public BulletData BulletData => @params != null ? @params.BulletData : null;
+        /// <summary>
+        /// 0 - the weapon is fully reloaded <br/>
+        /// 1 - the weapon just fired and has started reloading <br/>
+        /// 0.x - the weapon is in the process of reloading, with 0.5 meaning it is halfway through the reload time
+        /// </summary>
         public float ReloadStatus
         {
             get
@@ -63,16 +66,7 @@ namespace Weapons
         protected virtual void OnValidate()
         {
             if (shootPoints.IsEmpty()) shootPoints = new Transform[] { transform };
-            if (Heatsink == null)
-            {
-                Transform parent = transform;
-                while (parent != null)
-                {
-                    Heatsink = parent.GetComponent<Heatsink>();
-                    if (Heatsink != null) break;
-                    parent = parent.parent;
-                }
-            }
+            //if (Heatsink == null)Heatsink=GetComponentInParent<Heatsink>();
         }
 
         protected virtual void Awake()
@@ -84,9 +78,6 @@ namespace Weapons
                 //Debugging.LogWarning($"{transform} has no shoot points!");
                 shootPoints = new Transform[] { transform };
             }
-            //currentShotCooldown = @params.MaxShotCooldown;
-            ReadinessValue = 0;
-            shotTimer ??= new(currentShotCooldown);
         }
 
         protected virtual void OnEnable()
@@ -99,7 +90,7 @@ namespace Weapons
         /// </summary>
         public virtual void PerformReset()
         {
-            shotTimer ??= new CountdownTimer(@params.MaxShotCooldown);
+            shotTimer ??= new(@params.MaxShotCooldown);
             //currentShotCooldown = @params.MaxShotCooldown;
             ReadinessValue = 0;
             shotTimer.Reset(currentShotCooldown);
@@ -153,29 +144,24 @@ namespace Weapons
         }
 
         #region Shooting
-        /// <summary>
-        /// Returns true if the Weapons can shoot and fires a bullet at the target. 
-        /// Resets the shot cooldown timer.
-        /// </summary>
-        /// <param name="target">The target to shoot at.</param>
-        /// <returns>True if the Weapons successfully fired a shot, false otherwise.</returns>
-        public bool Shoot(ImprovedMonoBehaviour target)
+        public bool Shoot(Vector3 targetPosition, EntityBase target)
         {
             if (!CanShoot()) return false;
-            Fire(target);
             shotTimer.Reset(currentShotCooldown);
             shotTimer.Start();
+            Fire(targetPosition, target);
             return true;
         }
 
         /// <summary>
         /// Fire once for every shoot point.
         /// </summary>
-        public virtual void Fire(ImprovedMonoBehaviour target)
+        public virtual void Fire(Vector3 targetPosition, EntityBase target)
         {
             for (int i = 0; i < shootPoints.Length; i++)
             {
                 if (shootPoints[i] == null || !shootPoints[i].gameObject.activeSelf) continue;
+                shootPoints[i].LookAt(targetPosition);
                 ProcessBullet(@params.GetInstance(shootPoints[i]), target);
             }
         }
@@ -185,14 +171,14 @@ namespace Weapons
         /// Then activate the bullet.
         /// </summary>
         /// <param name="bullet">The bullet to be processed.</param>
-        /// <param name="target">The target of the bullet.</param>
-        public void ProcessBullet(Bullet bullet, ImprovedMonoBehaviour target)
+        public Bullet ProcessBullet(Bullet bullet, EntityBase target)
         {
             //UnitProperty.IncreaseSignature(@params.SignatureIncrease);
             bullet.Owner = UnitProperty;
             if (Heatsink != null) Heatsink.IncreaseHeat(@params.HeatPerShot);
             PerformBulletInitialization(bullet, target);
             bullet.gameObject.SetActive(true);
+            return bullet;
         }
 
         /// <summary>
@@ -200,7 +186,7 @@ namespace Weapons
         /// </summary>
         /// <param name="bullet"></param>
         /// <param name="target"></param>
-        protected abstract void PerformBulletInitialization(Bullet bullet, ImprovedMonoBehaviour target);
+        protected abstract void PerformBulletInitialization(Bullet bullet, EntityBase target);
         #endregion
         #endregion
     }
