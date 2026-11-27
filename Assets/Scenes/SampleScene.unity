@@ -442,7 +442,9 @@ MonoBehaviour:
   weapons:
   - {fileID: 1594568994}
   castOrigin: {fileID: 0}
-  parameters: {fileID: 11400000, guid: a61e7ab1a2db12a4e9c9166bb881fdb2, type: 2}
+  params: {fileID: 11400000, guid: a61e7ab1a2db12a4e9c9166bb881fdb2, type: 2}
+  currentShotCooldown: 0
+  readinessValue: -1
 --- !u!1 &1675803284
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,13 +1,13 @@
 using UnityEngine;
 using Utilities;
-namespace Weapons
+namespace AI
 {
     [CreateAssetMenu(fileName = "TargetEvaluation", menuName = "ScriptableObjects/BasicTargetEvaluation")]
     public class BasicTargetEvaluation : TargetEvaluation
     {
         [SerializeField] protected float maxRange = 100;
 
-        public override float Evaluate(Unit shooter, ImprovedMonoBehaviour target)
+        public override float Evaluate(Unit shooter, EntityBase target)
         {
             if (!target.Active())
             {

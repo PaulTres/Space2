@@ -1,8 +1,8 @@
-﻿using HybridBT2;
+﻿using AI;
+using HybridBT2;
 using System;
 using UnityEngine;
 using Utilities;
-using Weapons;
 
 [CreateAssetMenu(menuName = "HybridBT2/Services/TargetAcquisition", fileName = "TargetAcquisition")]
 public class TargetAcquisitionService : ServiceData
