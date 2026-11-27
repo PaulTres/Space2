@@ -38,7 +38,8 @@ namespace Weapons
                 }
             }
         }
-
+        [Tooltip("If true, each shoot point of the weapon will look at the target when firing.")]
+        [SerializeField] protected bool aimAtTarget = true;
         public BulletData BulletData => @params != null ? @params.BulletData : null;
         /// <summary>
         /// 0 - the weapon is fully reloaded <br/>

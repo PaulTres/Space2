@@ -5,7 +5,6 @@ namespace Weapons
 {
     public class PlayerFireControl : FireControl
     {
-        [SerializeField] protected Camera primaryCamera;
         [SerializeField] protected Transform currentTargetIndicator;
 
         protected override void PerformUpdate(float _)
@@ -50,7 +49,7 @@ namespace Weapons
 
             var direction = target.position - GameManager.Player.position;
             var distance = direction.magnitude;
-            var angleScore = Vector3.Dot(direction.normalized, primaryCamera.transform.forward);
+            var angleScore = Vector3.Dot(direction.normalized, castOrigin.forward);
             inFov = angleScore > 0.1f;
             var distanceScore = (GlobalConfig.PlayerTargetMaxDistance - distance) /
                 GlobalConfig.PlayerTargetMaxDistance;
@@ -82,7 +81,7 @@ namespace Weapons
             var distance = dirToTarget.magnitude;
             currentTargetIndicator.gameObject.SetActive(
                 distance > 200 ||
-                Vector3.Dot(primaryCamera.transform.forward, dirToTarget) < 0.25f);
+                Vector3.Dot(castOrigin.forward, dirToTarget) < 0.25f);
             //currentTargetIndicator.gameObject.SetActive()
             currentTargetIndicator.LookAt(target.position);
         }
