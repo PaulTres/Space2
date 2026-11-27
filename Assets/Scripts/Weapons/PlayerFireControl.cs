@@ -8,6 +8,11 @@ namespace Weapons
         [SerializeField] protected Camera primaryCamera;
         [SerializeField] protected Transform currentTargetIndicator;
 
+        protected override void PerformUpdate(float _)
+        {
+            UpdateTargetPoint();
+        }
+
         protected override void FindTarget()
         {
             if (GameManager.Player == null || Time.timeScale == 0) return;
@@ -75,8 +80,8 @@ namespace Weapons
             //only activate the indicator when the target is off-screen or far away
             var dirToTarget = target.position - transform.root.position;
             var distance = dirToTarget.magnitude;
-            currentTargetIndicator.gameObject.SetActive( 
-                distance > 200 || 
+            currentTargetIndicator.gameObject.SetActive(
+                distance > 200 ||
                 Vector3.Dot(primaryCamera.transform.forward, dirToTarget) < 0.25f);
             //currentTargetIndicator.gameObject.SetActive()
             currentTargetIndicator.LookAt(target.position);

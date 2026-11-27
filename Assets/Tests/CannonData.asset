@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca8266c4c25134841a92f9f6dd4b471f, type: 3}
   m_Name: CannonData
   m_EditorClassIdentifier: MainAssembly::Weapons.WeaponData
-  MaxShotCooldown: 5
+  MaxShotCooldown: 0.1
   RateOfFireRampUp: 0.1
   RateOfFireRampDown: 1
-  MinShotCooldown: 1
+  MinShotCooldown: 0
   readinessCurve:
     serializedVersion: 2
     m_Curve:

@@ -107,12 +107,6 @@ namespace Weapons
             Transform.position += dt * linearVelocity;
         }
 
-        protected void HandleImpacts(float dt)
-        {
-
-        }
-
-
         /// <summary>
         /// Checks for collisions using a raycast in the direction of travel.
         /// If found, returns disableOnHit and calls OnHit.
@@ -137,10 +131,13 @@ namespace Weapons
 
         protected virtual void OnDrawGizmos()
         {
-            Gizmos.color = Color.red;
-            Gizmos.DrawRay(Transform.position, linearVelocity);
-            //Gizmos.color = TextColor.blue;
-            //Gizmos.DrawRay(tr.position, tr.forward * topSpeed);
+            if (GlobalConfig.Debug)
+            {
+                Gizmos.color = Color.red;
+                Gizmos.DrawRay(Transform.position, linearVelocity);
+                Gizmos.color = Color.blue;
+                Gizmos.DrawRay(Transform.position, Transform.forward * topSpeed);
+            }
         }
         #endregion
     }

@@ -28,7 +28,7 @@ namespace Weapons
             }
         }
 
-        protected void OnEnable()
+        protected virtual void OnEnable()
         {
             if (!castOrigin)
             {
@@ -38,15 +38,12 @@ namespace Weapons
             GlobalUpdater.RegisterFixedUpdate(PerformUpdate);
         }
 
-        protected void OnDisable()
+        protected virtual void OnDisable()
         {
             GlobalUpdater.DeregisterFixedUpdate(PerformUpdate);
         }
 
-        protected virtual void PerformUpdate(float _)
-        {
-            UpdateTargetPoint();
-        }
+        protected abstract void PerformUpdate(float _);
 
         public bool Shoot()
         {

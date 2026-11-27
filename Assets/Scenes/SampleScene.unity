@@ -441,8 +441,8 @@ MonoBehaviour:
   checkRadius: 0.3
   weapons:
   - {fileID: 1594568994}
-  targetEvaluation: {fileID: 11400000, guid: 395f9635eedf41c41af1effce6650209, type: 2}
-  minUtilityDelta: 0
+  castOrigin: {fileID: 0}
+  parameters: {fileID: 11400000, guid: a61e7ab1a2db12a4e9c9166bb881fdb2, type: 2}
 --- !u!1 &1675803284
 GameObject:
   m_ObjectHideFlags: 0

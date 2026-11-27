@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.Audio;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 [CreateAssetMenu(menuName = "ScriptableObjects/GlobalConfig", fileName = "GlobalConfig")]
 public class GlobalConfig : ScriptableObject
@@ -11,6 +12,7 @@ public class GlobalConfig : ScriptableObject
     #region Access
     static readonly string addressableAdress = "GlobalConfig";
     static GlobalConfig instance;
+    static AsyncOperationHandle<GlobalConfig> loadHandle;
     /// <summary>
     /// Returns a global instance. Will try to find the asset in the addressables 
     /// system if it hasn't been loaded yet. This is a blocking call, so use 
@@ -22,8 +24,16 @@ public class GlobalConfig : ScriptableObject
         {
             if (instance == null)
             {
-                var handle = Addressables.LoadAssetAsync<GlobalConfig>(addressableAdress);
-                instance = handle.WaitForCompletion();
+                if (!loadHandle.IsValid()) loadHandle = Addressables.LoadAssetAsync<GlobalConfig>(addressableAdress);
+                loadHandle.WaitForCompletion();
+                if (loadHandle.Status != AsyncOperationStatus.Succeeded)
+                {
+                    var ex = loadHandle.OperationException;
+                    Addressables.Release(loadHandle);
+                    if (ex != null) throw ex;
+                    instance = null;
+                }
+                else instance = loadHandle.Result;
             }
             return instance;
         }

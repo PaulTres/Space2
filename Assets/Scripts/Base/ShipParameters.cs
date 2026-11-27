@@ -3,7 +3,7 @@ using UnityEngine;
 
 
 /// <summary>
-/// This class is used to store parameters about a ship/unit on the object.
+/// This class is used to store @params about a ship/unit on the object.
 /// </summary>
 public class ShipParameters : MonoBehaviour
 {

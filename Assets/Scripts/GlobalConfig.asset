@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d40f19ab2299d4299ef3b6a2d9d1fd, type: 3}
   m_Name: GlobalConfig
   m_EditorClassIdentifier: MainAssembly::GlobalConfig
+  debug: 0
+  testing: 1
   audioMixer: {fileID: 0}
   clickSound:
     clip: {fileID: 0}

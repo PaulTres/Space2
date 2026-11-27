@@ -16,7 +16,7 @@ MonoBehaviour:
   m_GUID: db9efecf498dd5d4eb433d7411bcbf01
   m_SerializeEntries:
   - m_GUID: 3d6d3f43e005734459013a26c2f64029
-    m_Address: Assets/Scripts/GlobalConfig.asset
+    m_Address: GlobalConfig
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
