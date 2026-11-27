@@ -2,7 +2,7 @@ using UnityEngine;
 using Utilities;
 namespace Weapons
 {
-    [CreateAssetMenu(fileName = "TargetEvaluation", menuName = "Weapons/Turret/TargetEvaluation")]
+    [CreateAssetMenu(fileName = "TargetEvaluation", menuName = "ScriptableObjects/BasicTargetEvaluation")]
     public class BasicTargetEvaluation : TargetEvaluation
     {
         [SerializeField] protected float maxRange = 100;

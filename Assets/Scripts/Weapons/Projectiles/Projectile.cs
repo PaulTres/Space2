@@ -56,10 +56,13 @@ namespace Weapons
                 acceleration = topSpeed / 10;
             }
             Transform.localScale = Vector3.one * data.ScaleFactor;
-            ProjectileRendererProperty.material = data.RendererMaterial;
-            TrailRendererProperty.material = data.TrailRendererMaterial;
-            TrailRendererProperty.widthCurve = data.TrailRendererCurve;
-            inertialDampeners = data.InertialDampeners;
+            ProjectileRendererProperty.material = data.RendererMaterial ? data.RendererMaterial : ProjectileRendererProperty.material;
+            if (TrailRendererProperty)
+            {
+                TrailRendererProperty.material = data.TrailRendererMaterial ? data.TrailRendererMaterial : TrailRendererProperty.material;
+                TrailRendererProperty.widthCurve = data.TrailRendererCurve;
+                inertialDampeners = data.InertialDampeners;
+            }
         }
 
         protected override void OnEnable()
@@ -78,7 +81,7 @@ namespace Weapons
             }
             collisionMask = GlobalConfig.GetBulletCollisionMask(gameObject.layer);
             angularVelocity = Vector3.zero;
-            TrailRendererProperty.Clear();
+            if (TrailRendererProperty) TrailRendererProperty.Clear();
         }
         #endregion
 

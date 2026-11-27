@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3061846a3ad9944195571912cc9220f, type: 3}
+  m_Name: ProjectileData
+  m_EditorClassIdentifier: MainAssembly::Weapons.ProjectileData
+  Prefab: {fileID: 5739529492658641604, guid: 5ac006e22459f27448a6558b8739d127, type: 3}
+  Key: 0
+  ValidateData: 1
+  DisableOnHit: 1
+  Damage: 1
+  LifeTime: 10
+  EffectScaleFactor: 1
+  OnSpawnEffect: {fileID: 0}
+  OnHitEffect: {fileID: 0}
+  DamagePriorityTargets: 1
+  TopSpeed: 20
+  Acceleration: 1
+  InitialVelocity: 10
+  InertialDampeners: 1
+  ScaleFactor: 0.1
+  RendererMaterial: {fileID: 0}
+  TrailRendererMaterial: {fileID: 0}
+  TrailRendererCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.35
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  resetCurve: 0
+  validateData: 0

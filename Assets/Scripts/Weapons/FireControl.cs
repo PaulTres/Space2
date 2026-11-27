@@ -7,16 +7,18 @@ namespace Weapons
 
     public abstract class FireControl : ImprovedMonoBehaviour
     {
+        protected Vector3 targetPoint;
         /// <summary>
         /// All weapons should aim at this point when firing. It is updated every frame to reflect the current target point based on the weapon's forward direction and any obstacles in the way.
         /// </summary>
-        public Vector3 TargetPoint { get; protected set; }
+        public virtual Vector3 TargetPoint => targetPoint;
         [SerializeField] protected LayerMask targetMask;
         [SerializeField] protected float maxDistance = 100f;
         [SerializeField] protected float checkRadius = .3f;
         [SerializeField] protected List<WeaponBase> weapons = new();
         protected EntityBase target;
         public virtual EntityBase Target => target;
+        [SerializeField] protected Transform castOrigin;
 
         protected virtual void OnValidate()
         {
@@ -28,6 +30,11 @@ namespace Weapons
 
         protected void OnEnable()
         {
+            if (!castOrigin)
+            {
+                Debug.LogWarning($"{this} has no set cast origin, using transform!");
+                castOrigin = Transform;
+            }
             GlobalUpdater.RegisterFixedUpdate(PerformUpdate);
         }
 
@@ -55,13 +62,13 @@ namespace Weapons
 
         protected void UpdateTargetPoint()
         {
-            if (Physics.SphereCast(Transform.position, checkRadius, Transform.forward, out RaycastHit hitInfo, maxDistance, targetMask))
+            if (Physics.SphereCast(castOrigin.position, checkRadius, castOrigin.forward, out RaycastHit hitInfo, maxDistance, targetMask))
             {
-                TargetPoint = hitInfo.point;
+                targetPoint = hitInfo.point;
             }
             else
             {
-                TargetPoint = Transform.position + Transform.forward * maxDistance;
+                targetPoint = castOrigin.position + castOrigin.forward * maxDistance;
             }
         }
     }

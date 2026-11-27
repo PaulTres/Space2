@@ -9,6 +9,7 @@ namespace Weapons
         [SerializeField] protected float minUtilityDelta = 0;
         protected Unit unit;
         public FireControl Substitute { get; set; }
+        public override Vector3 TargetPoint => Substitute ? Substitute.TargetPoint : targetPoint;
         public override EntityBase Target => Substitute ? Substitute.Target : target;
 
         protected override void OnValidate()
@@ -19,8 +20,14 @@ namespace Weapons
 
         protected override void PerformUpdate(float _)
         {
+            if (Substitute) return;
             base.PerformUpdate(_);
             FindTarget();
+            if (Target)
+            {
+                castOrigin.LookAt(Target.position);
+                Shoot();
+            }
         }
 
         protected override void FindTarget()

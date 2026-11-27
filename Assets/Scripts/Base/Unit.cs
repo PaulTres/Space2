@@ -10,7 +10,7 @@ using Utilities;
 [RequireComponent(typeof(HPComponent))]
 [RequireComponent(typeof(UnitDeathEffects))]
 [RequireComponent(typeof(ShipParameters))]
-public abstract class Unit : EntityBase
+public class Unit : EntityBase
 {
     #region Fields
     #region Misc
@@ -96,8 +96,8 @@ public abstract class Unit : EntityBase
     protected void OnValidate()
     {
         if (damageTakingObjects.IsEmpty()) damageTakingObjects = new(GetComponentsInChildren<DamageReceiver>());
-        Debug.Assert(damageTakingObjects.Count > 0, $"{Transform} has no objects for taking damage!");
-        Debug.Assert(!collisionCheckers.IsEmpty(), $"{Transform} has no objects for handling collisions!");
+        Debug.Assert(GlobalConfig.Testing || damageTakingObjects.Count > 0, $"{Transform} has no objects for taking damage!");
+        Debug.Assert(GlobalConfig.Testing || !collisionCheckers.IsEmpty(), $"{Transform} has no objects for handling collisions!");
         if (Parameters == null)
         {
             Parameters = GetComponent<ShipParameters>();
@@ -165,7 +165,6 @@ public abstract class Unit : EntityBase
         else if (Team == GlobalConfig.EnemyTeam) return UnitManager.GetShips(GlobalConfig.PlayerTeam);
         Debug.LogError($"{this} is on an invalid team!");
         return new();
-
     }
     #endregion
 

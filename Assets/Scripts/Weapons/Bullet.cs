@@ -16,7 +16,7 @@ namespace Weapons
         #region Pool
         public enum Type
         {
-
+            Basic
         }
         static readonly ObjectPool<Type, Bullet> objectPool = new();
 

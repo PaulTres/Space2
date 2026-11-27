@@ -36,6 +36,12 @@ public class GlobalConfig : ScriptableObject
     }
     #endregion
 
+    #region Editor
+    [SerializeField] protected bool debug = true, testing = true;
+    public static bool Debug => Instance.debug;
+    public static bool Testing => Instance.testing;
+    #endregion
+
     #region Audio
     [Header("Audio")]
     [SerializeField] protected AudioMixer audioMixer;
