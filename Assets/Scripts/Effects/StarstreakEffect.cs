@@ -8,13 +8,13 @@ namespace Effects
     public class StarstreakEffect : MonoBehaviour
     {
         protected ParticleSystem particles;
-        protected PlayerShip player;
+        protected PlayerShipControls player;
         [SerializeField] protected float maxParticles = 10;
         ParticleSystem.MainModule main;
 
         protected void Awake()
         {
-            player = transform.root.GetComponent<PlayerShip>();
+            player = transform.root.GetComponent<PlayerShipControls>();
             Debug.Assert(player != null);
             EventBus<ObjectDestroyed>.AddActions(transform.root.GetInstanceID(), null, Stop);
             particles = GetComponent<ParticleSystem>();

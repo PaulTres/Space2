@@ -8,6 +8,7 @@ using Utilities;
 
 public static class GameManager
 {
+    #region Player controls
     static readonly string rebindKey = "InputBindings";
     static PlayerControls inputActions;
     /// <summary>
@@ -31,13 +32,17 @@ public static class GameManager
             return inputActions;
         }
     }
+    public static Camera PlayerCamera { get; set; } = null;
+    public static bool PlayerDead { get; set; } = false;
+    #endregion
+
     static GameSave currentSave;
     public static float MissionTime { get; set; } = 0;
     /// <summary>
     /// All the units that have been destroyed over the course of a mission.
     /// </summary>
     public static List<UnitDestroyed> UnitsDestroyed { get; } = new();
-    public static PlayerShip Player { get; set; } = null;
+    public static PlayerShipControls Player { get; set; } = null;
     /// <summary>
     /// The latest mission the player can play.
     /// </summary>
@@ -117,6 +122,7 @@ public static class GameManager
 
     public static void LoadMission()
     {
+        PlayerCamera = null;
         if (ChosenMissionIndex < 0) LoadTutorial();
         else LoadMission(ChosenMissionIndex);
     }

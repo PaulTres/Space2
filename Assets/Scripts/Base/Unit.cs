@@ -93,7 +93,7 @@ public class Unit : EntityBase
         }
     }
 
-    protected void OnValidate()
+    protected virtual void OnValidate()
     {
         if (damageTakingObjects.IsEmpty()) damageTakingObjects = new(GetComponentsInChildren<DamageReceiver>());
         Debug.Assert(GlobalConfig.Testing || damageTakingObjects.Count > 0, $"{Transform} has no objects for taking damage!");

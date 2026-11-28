@@ -89,7 +89,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     ""name"": ""PlayerControls"",
     ""maps"": [
         {
-            ""name"": ""BasicControls"",
+            ""name"": ""ShipControls"",
             ""id"": ""c04068b5-2516-47d2-963f-ceefe7c8536c"",
             ""actions"": [
                 {
@@ -100,51 +100,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Roll"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""7c5fafd4-0650-4d5e-9a9a-538440deb1eb"",
-                    ""expectedControlType"": ""Axis"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""MouseLook"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""20312cd6-5ba9-418f-b530-3f4fa8a4b3c1"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""FreeLook"",
-                    ""type"": ""Value"",
-                    ""id"": ""5db847f9-926a-4ad9-95c7-0e94377a6c17"",
-                    ""expectedControlType"": ""Axis"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Zoom"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""5b6826c9-23de-415b-9d2d-06ae97bee3fa"",
-                    ""expectedControlType"": ""Axis"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Reset"",
-                    ""type"": ""Button"",
-                    ""id"": ""be82f18c-0cbb-475e-8d74-747bd1286fdf"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 },
                 {
                     ""name"": ""ToggleDampeners"",
@@ -235,105 +190,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""afe0c525-5a31-408d-ad17-0d1bd9b67a9e"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Roll"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""Positive"",
-                    ""id"": ""8ed7183b-b482-42ac-ae47-5a2230e310d7"",
-                    ""path"": ""<Keyboard>/q"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Roll"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Negative"",
-                    ""id"": ""16f91a20-556d-424a-be3a-650c6c3f66ee"",
-                    ""path"": ""<Keyboard>/e"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Roll"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""a9eed224-c1bd-4cbc-a8d0-02c7b3ada476"",
-                    ""path"": ""<Mouse>/delta"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MouseLook"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""61ff89da-e859-48dc-9e07-d906466bfae6"",
-                    ""path"": ""<Mouse>/rightButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""FreeLook"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""8df2a9b8-2f65-4637-91ba-4f86c7b2be97"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Zoom"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""811c652f-6d67-4532-9012-6f64915eff98"",
-                    ""path"": ""<Mouse>/scroll/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Zoom"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""d7cda269-2496-4d70-8bd4-f118444b978c"",
-                    ""path"": ""<Mouse>/scroll/up"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Zoom"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""7576dbd0-501a-4324-a0b3-b7d1f1d3bbe1"",
-                    ""path"": ""<Mouse>/middleButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Reset"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
                     ""name"": """",
                     ""id"": ""46d31f77-fbfd-4eb7-a78a-8bba58c540a5"",
                     ""path"": ""<Keyboard>/z"",
@@ -379,12 +235,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             ""id"": ""5bea49af-72b2-4f18-8862-0ffba008ac3d"",
             ""actions"": [
                 {
-                    ""name"": ""ExecuteAction"",
-                    ""type"": ""PassThrough"",
+                    ""name"": ""Shoot"",
+                    ""type"": ""Value"",
                     ""id"": ""91256219-16ac-4c65-a042-d942707d4ad9"",
                     ""expectedControlType"": ""Axis"",
                     ""processors"": """",
-                    ""interactions"": ""Tap"",
+                    ""interactions"": """",
                     ""initialStateCheck"": true
                 },
                 {
@@ -414,7 +270,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""ExecuteAction"",
+                    ""action"": ""Shoot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -441,34 +297,189 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""CameraControls"",
+            ""id"": ""8537578f-e09e-4ccb-a9c2-9b5a1cf76747"",
+            ""actions"": [
+                {
+                    ""name"": ""MouseLook"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""50fe25e1-e20f-4942-81e3-2afce2b842ac"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Roll"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""50848b37-2aa9-4b3d-a0dc-28c7a7f5683d"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""ResetCamera"",
+                    ""type"": ""Button"",
+                    ""id"": ""5fb6358f-4636-4a37-9403-4719b0b18925"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Zoom"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""1597e14a-57b3-4499-903a-d1d6432bb346"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""FreeLook"",
+                    ""type"": ""Value"",
+                    ""id"": ""22f05f7d-30c2-4980-8a4f-2a92f33cbea5"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""2a2879c7-c09b-4132-aa7c-b7ce7c644195"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MouseLook"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""fc5b967d-717c-49c7-9ca8-419ed5bc96fe"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Roll"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Positive"",
+                    ""id"": ""d571beb7-c9d1-4967-bc80-d409356d1f0d"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Roll"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Negative"",
+                    ""id"": ""fe98d53b-cb39-449f-a54a-cae0c2db36c7"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Roll"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4da6ad46-2018-4b14-b766-eddcb7bb2a75"",
+                    ""path"": ""<Mouse>/middleButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ResetCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""5549531f-aab2-4c20-89d5-742f3c4f565a"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Zoom"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""739950ae-3574-4c68-b359-55ac572d464b"",
+                    ""path"": ""<Mouse>/scroll/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Zoom"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""a0a18e7c-57fa-400c-97f0-13fc61e0d5bb"",
+                    ""path"": ""<Mouse>/scroll/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Zoom"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a1946a49-d83d-4cbf-b117-17026d94df86"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FreeLook"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
 }");
-        // BasicControls
-        m_BasicControls = asset.FindActionMap("BasicControls", throwIfNotFound: true);
-        m_BasicControls_Move = m_BasicControls.FindAction("Move", throwIfNotFound: true);
-        m_BasicControls_Roll = m_BasicControls.FindAction("Roll", throwIfNotFound: true);
-        m_BasicControls_MouseLook = m_BasicControls.FindAction("MouseLook", throwIfNotFound: true);
-        m_BasicControls_FreeLook = m_BasicControls.FindAction("FreeLook", throwIfNotFound: true);
-        m_BasicControls_Zoom = m_BasicControls.FindAction("Zoom", throwIfNotFound: true);
-        m_BasicControls_Reset = m_BasicControls.FindAction("Reset", throwIfNotFound: true);
-        m_BasicControls_ToggleDampeners = m_BasicControls.FindAction("ToggleDampeners", throwIfNotFound: true);
+        // ShipControls
+        m_ShipControls = asset.FindActionMap("ShipControls", throwIfNotFound: true);
+        m_ShipControls_Move = m_ShipControls.FindAction("Move", throwIfNotFound: true);
+        m_ShipControls_ToggleDampeners = m_ShipControls.FindAction("ToggleDampeners", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Escape = m_UI.FindAction("Escape", throwIfNotFound: true);
         // Weapons
         m_Weapons = asset.FindActionMap("Weapons", throwIfNotFound: true);
-        m_Weapons_ExecuteAction = m_Weapons.FindAction("ExecuteAction", throwIfNotFound: true);
+        m_Weapons_Shoot = m_Weapons.FindAction("Shoot", throwIfNotFound: true);
         m_Weapons_FindTarget = m_Weapons.FindAction("FindTarget", throwIfNotFound: true);
         m_Weapons_Cycle = m_Weapons.FindAction("Cycle", throwIfNotFound: true);
+        // CameraControls
+        m_CameraControls = asset.FindActionMap("CameraControls", throwIfNotFound: true);
+        m_CameraControls_MouseLook = m_CameraControls.FindAction("MouseLook", throwIfNotFound: true);
+        m_CameraControls_Roll = m_CameraControls.FindAction("Roll", throwIfNotFound: true);
+        m_CameraControls_ResetCamera = m_CameraControls.FindAction("ResetCamera", throwIfNotFound: true);
+        m_CameraControls_Zoom = m_CameraControls.FindAction("Zoom", throwIfNotFound: true);
+        m_CameraControls_FreeLook = m_CameraControls.FindAction("FreeLook", throwIfNotFound: true);
     }
 
     ~@PlayerControls()
     {
-        UnityEngine.Debug.Assert(!m_BasicControls.enabled, "This will cause a leak and performance issues, PlayerControls.BasicControls.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_ShipControls.enabled, "This will cause a leak and performance issues, PlayerControls.ShipControls.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_UI.enabled, "This will cause a leak and performance issues, PlayerControls.UI.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_Weapons.enabled, "This will cause a leak and performance issues, PlayerControls.Weapons.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_CameraControls.enabled, "This will cause a leak and performance issues, PlayerControls.CameraControls.Disable() has not been called.");
     }
 
     /// <summary>
@@ -541,59 +552,34 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // BasicControls
-    private readonly InputActionMap m_BasicControls;
-    private List<IBasicControlsActions> m_BasicControlsActionsCallbackInterfaces = new List<IBasicControlsActions>();
-    private readonly InputAction m_BasicControls_Move;
-    private readonly InputAction m_BasicControls_Roll;
-    private readonly InputAction m_BasicControls_MouseLook;
-    private readonly InputAction m_BasicControls_FreeLook;
-    private readonly InputAction m_BasicControls_Zoom;
-    private readonly InputAction m_BasicControls_Reset;
-    private readonly InputAction m_BasicControls_ToggleDampeners;
+    // ShipControls
+    private readonly InputActionMap m_ShipControls;
+    private List<IShipControlsActions> m_ShipControlsActionsCallbackInterfaces = new List<IShipControlsActions>();
+    private readonly InputAction m_ShipControls_Move;
+    private readonly InputAction m_ShipControls_ToggleDampeners;
     /// <summary>
-    /// Provides access to input actions defined in input action map "BasicControls".
+    /// Provides access to input actions defined in input action map "ShipControls".
     /// </summary>
-    public struct BasicControlsActions
+    public struct ShipControlsActions
     {
         private @PlayerControls m_Wrapper;
 
         /// <summary>
         /// Construct a new instance of the input action map wrapper class.
         /// </summary>
-        public BasicControlsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public ShipControlsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         /// <summary>
-        /// Provides access to the underlying input action "BasicControls/Move".
+        /// Provides access to the underlying input action "ShipControls/Move".
         /// </summary>
-        public InputAction @Move => m_Wrapper.m_BasicControls_Move;
+        public InputAction @Move => m_Wrapper.m_ShipControls_Move;
         /// <summary>
-        /// Provides access to the underlying input action "BasicControls/Roll".
+        /// Provides access to the underlying input action "ShipControls/ToggleDampeners".
         /// </summary>
-        public InputAction @Roll => m_Wrapper.m_BasicControls_Roll;
-        /// <summary>
-        /// Provides access to the underlying input action "BasicControls/MouseLook".
-        /// </summary>
-        public InputAction @MouseLook => m_Wrapper.m_BasicControls_MouseLook;
-        /// <summary>
-        /// Provides access to the underlying input action "BasicControls/FreeLook".
-        /// </summary>
-        public InputAction @FreeLook => m_Wrapper.m_BasicControls_FreeLook;
-        /// <summary>
-        /// Provides access to the underlying input action "BasicControls/Zoom".
-        /// </summary>
-        public InputAction @Zoom => m_Wrapper.m_BasicControls_Zoom;
-        /// <summary>
-        /// Provides access to the underlying input action "BasicControls/Reset".
-        /// </summary>
-        public InputAction @Reset => m_Wrapper.m_BasicControls_Reset;
-        /// <summary>
-        /// Provides access to the underlying input action "BasicControls/ToggleDampeners".
-        /// </summary>
-        public InputAction @ToggleDampeners => m_Wrapper.m_BasicControls_ToggleDampeners;
+        public InputAction @ToggleDampeners => m_Wrapper.m_ShipControls_ToggleDampeners;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
-        public InputActionMap Get() { return m_Wrapper.m_BasicControls; }
+        public InputActionMap Get() { return m_Wrapper.m_ShipControls; }
         /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
         public void Enable() { Get().Enable(); }
         /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
@@ -601,9 +587,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
         public bool enabled => Get().enabled;
         /// <summary>
-        /// Implicitly converts an <see ref="BasicControlsActions" /> to an <see ref="InputActionMap" /> instance.
+        /// Implicitly converts an <see ref="ShipControlsActions" /> to an <see ref="InputActionMap" /> instance.
         /// </summary>
-        public static implicit operator InputActionMap(BasicControlsActions set) { return set.Get(); }
+        public static implicit operator InputActionMap(ShipControlsActions set) { return set.Get(); }
         /// <summary>
         /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
         /// </summary>
@@ -611,29 +597,14 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         /// <remarks>
         /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
         /// </remarks>
-        /// <seealso cref="BasicControlsActions" />
-        public void AddCallbacks(IBasicControlsActions instance)
+        /// <seealso cref="ShipControlsActions" />
+        public void AddCallbacks(IShipControlsActions instance)
         {
-            if (instance == null || m_Wrapper.m_BasicControlsActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_BasicControlsActionsCallbackInterfaces.Add(instance);
+            if (instance == null || m_Wrapper.m_ShipControlsActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_ShipControlsActionsCallbackInterfaces.Add(instance);
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
-            @Roll.started += instance.OnRoll;
-            @Roll.performed += instance.OnRoll;
-            @Roll.canceled += instance.OnRoll;
-            @MouseLook.started += instance.OnMouseLook;
-            @MouseLook.performed += instance.OnMouseLook;
-            @MouseLook.canceled += instance.OnMouseLook;
-            @FreeLook.started += instance.OnFreeLook;
-            @FreeLook.performed += instance.OnFreeLook;
-            @FreeLook.canceled += instance.OnFreeLook;
-            @Zoom.started += instance.OnZoom;
-            @Zoom.performed += instance.OnZoom;
-            @Zoom.canceled += instance.OnZoom;
-            @Reset.started += instance.OnReset;
-            @Reset.performed += instance.OnReset;
-            @Reset.canceled += instance.OnReset;
             @ToggleDampeners.started += instance.OnToggleDampeners;
             @ToggleDampeners.performed += instance.OnToggleDampeners;
             @ToggleDampeners.canceled += instance.OnToggleDampeners;
@@ -645,39 +616,24 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         /// <remarks>
         /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
         /// </remarks>
-        /// <seealso cref="BasicControlsActions" />
-        private void UnregisterCallbacks(IBasicControlsActions instance)
+        /// <seealso cref="ShipControlsActions" />
+        private void UnregisterCallbacks(IShipControlsActions instance)
         {
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
-            @Roll.started -= instance.OnRoll;
-            @Roll.performed -= instance.OnRoll;
-            @Roll.canceled -= instance.OnRoll;
-            @MouseLook.started -= instance.OnMouseLook;
-            @MouseLook.performed -= instance.OnMouseLook;
-            @MouseLook.canceled -= instance.OnMouseLook;
-            @FreeLook.started -= instance.OnFreeLook;
-            @FreeLook.performed -= instance.OnFreeLook;
-            @FreeLook.canceled -= instance.OnFreeLook;
-            @Zoom.started -= instance.OnZoom;
-            @Zoom.performed -= instance.OnZoom;
-            @Zoom.canceled -= instance.OnZoom;
-            @Reset.started -= instance.OnReset;
-            @Reset.performed -= instance.OnReset;
-            @Reset.canceled -= instance.OnReset;
             @ToggleDampeners.started -= instance.OnToggleDampeners;
             @ToggleDampeners.performed -= instance.OnToggleDampeners;
             @ToggleDampeners.canceled -= instance.OnToggleDampeners;
         }
 
         /// <summary>
-        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="BasicControlsActions.UnregisterCallbacks(IBasicControlsActions)" />.
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="ShipControlsActions.UnregisterCallbacks(IShipControlsActions)" />.
         /// </summary>
-        /// <seealso cref="BasicControlsActions.UnregisterCallbacks(IBasicControlsActions)" />
-        public void RemoveCallbacks(IBasicControlsActions instance)
+        /// <seealso cref="ShipControlsActions.UnregisterCallbacks(IShipControlsActions)" />
+        public void RemoveCallbacks(IShipControlsActions instance)
         {
-            if (m_Wrapper.m_BasicControlsActionsCallbackInterfaces.Remove(instance))
+            if (m_Wrapper.m_ShipControlsActionsCallbackInterfaces.Remove(instance))
                 UnregisterCallbacks(instance);
         }
 
@@ -687,21 +643,21 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         /// <remarks>
         /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
         /// </remarks>
-        /// <seealso cref="BasicControlsActions.AddCallbacks(IBasicControlsActions)" />
-        /// <seealso cref="BasicControlsActions.RemoveCallbacks(IBasicControlsActions)" />
-        /// <seealso cref="BasicControlsActions.UnregisterCallbacks(IBasicControlsActions)" />
-        public void SetCallbacks(IBasicControlsActions instance)
+        /// <seealso cref="ShipControlsActions.AddCallbacks(IShipControlsActions)" />
+        /// <seealso cref="ShipControlsActions.RemoveCallbacks(IShipControlsActions)" />
+        /// <seealso cref="ShipControlsActions.UnregisterCallbacks(IShipControlsActions)" />
+        public void SetCallbacks(IShipControlsActions instance)
         {
-            foreach (var item in m_Wrapper.m_BasicControlsActionsCallbackInterfaces)
+            foreach (var item in m_Wrapper.m_ShipControlsActionsCallbackInterfaces)
                 UnregisterCallbacks(item);
-            m_Wrapper.m_BasicControlsActionsCallbackInterfaces.Clear();
+            m_Wrapper.m_ShipControlsActionsCallbackInterfaces.Clear();
             AddCallbacks(instance);
         }
     }
     /// <summary>
-    /// Provides a new <see cref="BasicControlsActions" /> instance referencing this action map.
+    /// Provides a new <see cref="ShipControlsActions" /> instance referencing this action map.
     /// </summary>
-    public BasicControlsActions @BasicControls => new BasicControlsActions(this);
+    public ShipControlsActions @ShipControls => new ShipControlsActions(this);
 
     // UI
     private readonly InputActionMap m_UI;
@@ -802,7 +758,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     // Weapons
     private readonly InputActionMap m_Weapons;
     private List<IWeaponsActions> m_WeaponsActionsCallbackInterfaces = new List<IWeaponsActions>();
-    private readonly InputAction m_Weapons_ExecuteAction;
+    private readonly InputAction m_Weapons_Shoot;
     private readonly InputAction m_Weapons_FindTarget;
     private readonly InputAction m_Weapons_Cycle;
     /// <summary>
@@ -817,9 +773,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         /// </summary>
         public WeaponsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         /// <summary>
-        /// Provides access to the underlying input action "Weapons/ExecuteAction".
+        /// Provides access to the underlying input action "Weapons/Shoot".
         /// </summary>
-        public InputAction @ExecuteAction => m_Wrapper.m_Weapons_ExecuteAction;
+        public InputAction @Shoot => m_Wrapper.m_Weapons_Shoot;
         /// <summary>
         /// Provides access to the underlying input action "Weapons/FindTarget".
         /// </summary>
@@ -854,9 +810,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_WeaponsActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_WeaponsActionsCallbackInterfaces.Add(instance);
-            @ExecuteAction.started += instance.OnExecuteAction;
-            @ExecuteAction.performed += instance.OnExecuteAction;
-            @ExecuteAction.canceled += instance.OnExecuteAction;
+            @Shoot.started += instance.OnShoot;
+            @Shoot.performed += instance.OnShoot;
+            @Shoot.canceled += instance.OnShoot;
             @FindTarget.started += instance.OnFindTarget;
             @FindTarget.performed += instance.OnFindTarget;
             @FindTarget.canceled += instance.OnFindTarget;
@@ -874,9 +830,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         /// <seealso cref="WeaponsActions" />
         private void UnregisterCallbacks(IWeaponsActions instance)
         {
-            @ExecuteAction.started -= instance.OnExecuteAction;
-            @ExecuteAction.performed -= instance.OnExecuteAction;
-            @ExecuteAction.canceled -= instance.OnExecuteAction;
+            @Shoot.started -= instance.OnShoot;
+            @Shoot.performed -= instance.OnShoot;
+            @Shoot.canceled -= instance.OnShoot;
             @FindTarget.started -= instance.OnFindTarget;
             @FindTarget.performed -= instance.OnFindTarget;
             @FindTarget.canceled -= instance.OnFindTarget;
@@ -916,12 +872,152 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     /// Provides a new <see cref="WeaponsActions" /> instance referencing this action map.
     /// </summary>
     public WeaponsActions @Weapons => new WeaponsActions(this);
+
+    // CameraControls
+    private readonly InputActionMap m_CameraControls;
+    private List<ICameraControlsActions> m_CameraControlsActionsCallbackInterfaces = new List<ICameraControlsActions>();
+    private readonly InputAction m_CameraControls_MouseLook;
+    private readonly InputAction m_CameraControls_Roll;
+    private readonly InputAction m_CameraControls_ResetCamera;
+    private readonly InputAction m_CameraControls_Zoom;
+    private readonly InputAction m_CameraControls_FreeLook;
     /// <summary>
-    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "BasicControls" which allows adding and removing callbacks.
+    /// Provides access to input actions defined in input action map "CameraControls".
     /// </summary>
-    /// <seealso cref="BasicControlsActions.AddCallbacks(IBasicControlsActions)" />
-    /// <seealso cref="BasicControlsActions.RemoveCallbacks(IBasicControlsActions)" />
-    public interface IBasicControlsActions
+    public struct CameraControlsActions
+    {
+        private @PlayerControls m_Wrapper;
+
+        /// <summary>
+        /// Construct a new instance of the input action map wrapper class.
+        /// </summary>
+        public CameraControlsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        /// <summary>
+        /// Provides access to the underlying input action "CameraControls/MouseLook".
+        /// </summary>
+        public InputAction @MouseLook => m_Wrapper.m_CameraControls_MouseLook;
+        /// <summary>
+        /// Provides access to the underlying input action "CameraControls/Roll".
+        /// </summary>
+        public InputAction @Roll => m_Wrapper.m_CameraControls_Roll;
+        /// <summary>
+        /// Provides access to the underlying input action "CameraControls/ResetCamera".
+        /// </summary>
+        public InputAction @ResetCamera => m_Wrapper.m_CameraControls_ResetCamera;
+        /// <summary>
+        /// Provides access to the underlying input action "CameraControls/Zoom".
+        /// </summary>
+        public InputAction @Zoom => m_Wrapper.m_CameraControls_Zoom;
+        /// <summary>
+        /// Provides access to the underlying input action "CameraControls/FreeLook".
+        /// </summary>
+        public InputAction @FreeLook => m_Wrapper.m_CameraControls_FreeLook;
+        /// <summary>
+        /// Provides access to the underlying input action map instance.
+        /// </summary>
+        public InputActionMap Get() { return m_Wrapper.m_CameraControls; }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+        public void Enable() { Get().Enable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+        public void Disable() { Get().Disable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+        public bool enabled => Get().enabled;
+        /// <summary>
+        /// Implicitly converts an <see ref="CameraControlsActions" /> to an <see ref="InputActionMap" /> instance.
+        /// </summary>
+        public static implicit operator InputActionMap(CameraControlsActions set) { return set.Get(); }
+        /// <summary>
+        /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <param name="instance">Callback instance.</param>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+        /// </remarks>
+        /// <seealso cref="CameraControlsActions" />
+        public void AddCallbacks(ICameraControlsActions instance)
+        {
+            if (instance == null || m_Wrapper.m_CameraControlsActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_CameraControlsActionsCallbackInterfaces.Add(instance);
+            @MouseLook.started += instance.OnMouseLook;
+            @MouseLook.performed += instance.OnMouseLook;
+            @MouseLook.canceled += instance.OnMouseLook;
+            @Roll.started += instance.OnRoll;
+            @Roll.performed += instance.OnRoll;
+            @Roll.canceled += instance.OnRoll;
+            @ResetCamera.started += instance.OnResetCamera;
+            @ResetCamera.performed += instance.OnResetCamera;
+            @ResetCamera.canceled += instance.OnResetCamera;
+            @Zoom.started += instance.OnZoom;
+            @Zoom.performed += instance.OnZoom;
+            @Zoom.canceled += instance.OnZoom;
+            @FreeLook.started += instance.OnFreeLook;
+            @FreeLook.performed += instance.OnFreeLook;
+            @FreeLook.canceled += instance.OnFreeLook;
+        }
+
+        /// <summary>
+        /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <remarks>
+        /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+        /// </remarks>
+        /// <seealso cref="CameraControlsActions" />
+        private void UnregisterCallbacks(ICameraControlsActions instance)
+        {
+            @MouseLook.started -= instance.OnMouseLook;
+            @MouseLook.performed -= instance.OnMouseLook;
+            @MouseLook.canceled -= instance.OnMouseLook;
+            @Roll.started -= instance.OnRoll;
+            @Roll.performed -= instance.OnRoll;
+            @Roll.canceled -= instance.OnRoll;
+            @ResetCamera.started -= instance.OnResetCamera;
+            @ResetCamera.performed -= instance.OnResetCamera;
+            @ResetCamera.canceled -= instance.OnResetCamera;
+            @Zoom.started -= instance.OnZoom;
+            @Zoom.performed -= instance.OnZoom;
+            @Zoom.canceled -= instance.OnZoom;
+            @FreeLook.started -= instance.OnFreeLook;
+            @FreeLook.performed -= instance.OnFreeLook;
+            @FreeLook.canceled -= instance.OnFreeLook;
+        }
+
+        /// <summary>
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="CameraControlsActions.UnregisterCallbacks(ICameraControlsActions)" />.
+        /// </summary>
+        /// <seealso cref="CameraControlsActions.UnregisterCallbacks(ICameraControlsActions)" />
+        public void RemoveCallbacks(ICameraControlsActions instance)
+        {
+            if (m_Wrapper.m_CameraControlsActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        /// <summary>
+        /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+        /// </summary>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+        /// </remarks>
+        /// <seealso cref="CameraControlsActions.AddCallbacks(ICameraControlsActions)" />
+        /// <seealso cref="CameraControlsActions.RemoveCallbacks(ICameraControlsActions)" />
+        /// <seealso cref="CameraControlsActions.UnregisterCallbacks(ICameraControlsActions)" />
+        public void SetCallbacks(ICameraControlsActions instance)
+        {
+            foreach (var item in m_Wrapper.m_CameraControlsActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_CameraControlsActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    /// <summary>
+    /// Provides a new <see cref="CameraControlsActions" /> instance referencing this action map.
+    /// </summary>
+    public CameraControlsActions @CameraControls => new CameraControlsActions(this);
+    /// <summary>
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "ShipControls" which allows adding and removing callbacks.
+    /// </summary>
+    /// <seealso cref="ShipControlsActions.AddCallbacks(IShipControlsActions)" />
+    /// <seealso cref="ShipControlsActions.RemoveCallbacks(IShipControlsActions)" />
+    public interface IShipControlsActions
     {
         /// <summary>
         /// Method invoked when associated input action "Move" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
@@ -930,41 +1026,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnMove(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "Roll" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnRoll(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "MouseLook" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnMouseLook(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "FreeLook" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnFreeLook(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "Zoom" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnZoom(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "Reset" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnReset(InputAction.CallbackContext context);
         /// <summary>
         /// Method invoked when associated input action "ToggleDampeners" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
@@ -996,12 +1057,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     public interface IWeaponsActions
     {
         /// <summary>
-        /// Method invoked when associated input action "ExecuteAction" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "Shoot" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnExecuteAction(InputAction.CallbackContext context);
+        void OnShoot(InputAction.CallbackContext context);
         /// <summary>
         /// Method invoked when associated input action "FindTarget" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
@@ -1016,5 +1077,48 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnCycle(InputAction.CallbackContext context);
+    }
+    /// <summary>
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "CameraControls" which allows adding and removing callbacks.
+    /// </summary>
+    /// <seealso cref="CameraControlsActions.AddCallbacks(ICameraControlsActions)" />
+    /// <seealso cref="CameraControlsActions.RemoveCallbacks(ICameraControlsActions)" />
+    public interface ICameraControlsActions
+    {
+        /// <summary>
+        /// Method invoked when associated input action "MouseLook" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnMouseLook(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Roll" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnRoll(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ResetCamera" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnResetCamera(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Zoom" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnZoom(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "FreeLook" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnFreeLook(InputAction.CallbackContext context);
     }
 }

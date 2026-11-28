@@ -30,7 +30,7 @@ namespace Player
 
         protected void OnEnable()
         {
-            if (PlayerShip.PlayerDead) ShowCanvas();
+            if (GameManager.PlayerDead) ShowCanvas();
             else StartCoroutine(Delay());
         }
 

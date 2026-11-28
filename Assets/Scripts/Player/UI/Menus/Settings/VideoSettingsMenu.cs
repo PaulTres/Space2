@@ -40,7 +40,7 @@ namespace Player
         {
             GlobalConfig.FOV = value;
             fovText.text = value.ToString();
-            if (PlayerShip.PlayerCamera != null) PlayerShip.PlayerCamera.fieldOfView = value;
+            if (GameManager.PlayerCamera != null) GameManager.PlayerCamera.fieldOfView = value;
         }
 
         protected void UpdateQualityText()

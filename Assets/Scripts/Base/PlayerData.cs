@@ -14,7 +14,7 @@ public class PlayerData : UnitData
         base.OnValidate();
         if (Prefab != null)
         {
-            var a = (PlayerShip)Prefab;
+            var a = (PlayerShipControls)Prefab;
             if (a == null) Debug.LogError($"{this} does not have a player ship!");
         }
     }

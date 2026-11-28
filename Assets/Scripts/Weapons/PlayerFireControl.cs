@@ -6,11 +6,25 @@ namespace Weapons
     public class PlayerFireControl : FireControl
     {
         [SerializeField] protected Transform currentTargetIndicator;
+        public bool Firing { get; set; }
+
+        protected override void OnEnable()
+        {
+            base.OnEnable();
+            Firing = false;
+        }
 
         protected override void PerformUpdate(float _)
         {
-            UpdateTargetPoint();
+            UpdateTargetInfo();
+            if (Firing)
+            {
+                UpdateTargetPoint();
+                Shoot();
+            }
         }
+
+        public void CycleTargets() => FindTarget();
 
         protected override void FindTarget()
         {
@@ -42,7 +56,7 @@ namespace Weapons
         /// </summary>
         /// <param name="target"></param>
         /// <returns></returns>
-        public float EvaluateTarget(ImprovedMonoBehaviour target, out bool inFov)
+        public float EvaluateTarget(EntityBase target, out bool inFov)
         {
             inFov = false;
             if (!GameManager.Player.Active() || !target.Active()) return float.MinValue;
@@ -61,29 +75,32 @@ namespace Weapons
         /// Fires when a new target has been selected.
         /// </summary>
         /// <param name="unit"></param>
-        protected void TargetSelected(ImprovedMonoBehaviour unit)
+        protected void TargetSelected(EntityBase unit)
         {
             if (unit == target) return;
-            throw new System.NotImplementedException();
+            Debug.Log($"New target selected: {unit}.");
         }
 
-        protected void UpdatetargetInfo()
+        protected void UpdateTargetInfo()
         {
             if (!target.Active())
             {
-                currentTargetIndicator.gameObject.SetActive(false);
+                if (currentTargetIndicator != null) currentTargetIndicator.gameObject.SetActive(false);
                 FindTarget();
                 return;
             }
 
-            //only activate the indicator when the target is off-screen or far away
-            var dirToTarget = target.position - transform.root.position;
-            var distance = dirToTarget.magnitude;
-            currentTargetIndicator.gameObject.SetActive(
-                distance > 200 ||
-                Vector3.Dot(castOrigin.forward, dirToTarget) < 0.25f);
-            //currentTargetIndicator.gameObject.SetActive()
-            currentTargetIndicator.LookAt(target.position);
+            if (currentTargetIndicator != null)
+            {
+                //only activate the indicator when the target is off-screen or far away
+                var dirToTarget = target.position - transform.root.position;
+                var distance = dirToTarget.magnitude;
+                currentTargetIndicator.gameObject.SetActive(
+                    distance > 200 ||
+                    Vector3.Dot(castOrigin.forward, dirToTarget) < 0.25f);
+                //currentTargetIndicator.gameObject.SetActive()
+                currentTargetIndicator.LookAt(target.position);
+            }
         }
     }
 }

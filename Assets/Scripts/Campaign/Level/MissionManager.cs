@@ -107,7 +107,7 @@ namespace Level
         /// This method is called when the mission fails. It shows a failure 
         /// message and disables the player ship after a delay. Do not use this 
         /// for player death, as it will prevent the player from dying and 
-        /// disable the ship instead. Use PlayerShip.Die() for player death.
+        /// disable the ship instead. Use PlayerShipControls.Die() for player death.
         /// </summary>
         /// <param name="text"></param>
         public void MissionFailed(string text = "Defeat")

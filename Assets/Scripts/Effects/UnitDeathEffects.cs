@@ -51,11 +51,14 @@ public class UnitDeathEffects : MonoBehaviour
     protected IEnumerator Death()
     {
         int j = 0;
-        for (int i = 0; i < count; i++)
+        if (explosionOrigins.Count > 0)
         {
-            effectDuringDeath.SpawnEffect(explosionOrigins[j].position, effectScaleFactor);
-            j = (j + 1) % explosionOrigins.Count;
-            yield return wait;
+            for (int i = 0; i < count; i++)
+            {
+                effectDuringDeath.SpawnEffect(explosionOrigins[j].position, effectScaleFactor);
+                j = (j + 1) % explosionOrigins.Count;
+                yield return wait;
+            }
         }
         //if (transform.name.Contains("Chungus")) Debugging.Log("Spawning final death effect: " + finalEffect);
         finalEffect.SpawnEffect(transform.position, finalEffectScaleFactor);
